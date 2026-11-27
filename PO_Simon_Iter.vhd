@@ -32,9 +32,9 @@ entity PO_Simon_Iter is
 
 end entity;
 
-architecture rtlBSN of PO_Simon_Iter is
+architecture RTLGSPT of PO_Simon_Iter is
 
-signal outMuxX, outMuxY, outRegX, outRegY, outRodadaX, outRodadaY : std_logic_vector  (31 downto 0);
+signal outmuxX, outMuxY, outRegX, outRegY, outRodadaX, outRodadaY : std_logic_vector  (31 downto 0);
 signal outMuxKey, outRegKey, outRodadaKey : std_logic_vector  (127 downto 0);
 signal outMuxCnt, outAddCnt, outRegCnt : std_logic_vector  (5 downto 0);
 signal zBit : std_logic;
@@ -123,7 +123,7 @@ begin
 -- Ctrl_load = '1' carrega as entradas; '0' realimenta a saida da rodada
 MuxX: 	Mux2p1
 			 generic map (DATA_WIDTH => 32)
-			 port map (a => outRodadaX, b => x_PO, sel => Ctrl_load, result => outMuxX);
+			 port map (a => outRodadaX, b => x_PO, sel => Ctrl_load, result => outmuxX);
 
 MuxY: 	Mux2p1
 			 generic map (DATA_WIDTH => 32)
@@ -139,7 +139,7 @@ MuxCnt: 	Mux2p1
 
 RegX: 	Reg
 			 generic map (DATA_WIDTH => 32)
-			 port map (clk => clk, enable => En_state, input => outMuxX, output => outRegX);
+			 port map (clk => clk, enable => En_state, input => outmuxX, output => outRegX);
 
 RegY: 	Reg
 			 generic map (DATA_WIDTH => 32)
@@ -176,4 +176,4 @@ outRegKey_view <= outRegKey;
 outRegCnt_view <= outRegCnt;
 zBit_view      <= zBit;
 
-end rtlBSN;
+end RTLGSPT;

@@ -19,7 +19,7 @@ entity Simon_KeySch is
 
 end entity;
 
-architecture rtlBSN of Simon_KeySch is
+architecture RTLGSPT of Simon_KeySch is
 
 signal k0, k1, k2, k3 : std_logic_vector (31 downto 0);
 signal outRotr3, outXorK1, outRotr1, outNewKey : std_logic_vector (31 downto 0);
@@ -45,4 +45,4 @@ begin
 	round_key <= k0;
 	key_out   <= outNewKey & k3 & k2 & k1;
 
-end rtlBSN;
+end RTLGSPT;

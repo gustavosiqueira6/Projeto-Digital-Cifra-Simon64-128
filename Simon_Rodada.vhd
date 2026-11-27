@@ -22,7 +22,7 @@ entity Simon_Rodada is
 
 end entity;
 
-architecture rtlBSN of Simon_Rodada is
+architecture RTLGSPT of Simon_Rodada is
 
 signal outRoundKey : std_logic_vector (31 downto 0);
 
@@ -59,4 +59,4 @@ KeySch: 	Simon_KeySch
 Feistel: Simon_Feistel
 			 port map (x_in => x_in, y_in => y_in, round_key => outRoundKey, x_out => x_out, y_out => y_out);
 
-end rtlBSN;
+end RTLGSPT;

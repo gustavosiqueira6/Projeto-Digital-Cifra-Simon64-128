@@ -20,7 +20,7 @@ entity Simon_Feistel is
 
 end entity;
 
-architecture rtlBSN of Simon_Feistel is
+architecture RTLGSPT of Simon_Feistel is
 
 signal outRotl1, outRotl8, outRotl2, outAnd, outF : std_logic_vector (31 downto 0);
 
@@ -39,4 +39,4 @@ begin
 	x_out <= y_in xor outF xor round_key;
 	y_out <= x_in;
 
-end rtlBSN;
+end RTLGSPT;

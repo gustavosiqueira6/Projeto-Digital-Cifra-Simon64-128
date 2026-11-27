@@ -35,9 +35,9 @@ entity Simon_Iter is
 
 end entity;
 
-architecture rtlBSN of Simon_Iter is
+architecture RTLGSPT of Simon_Iter is
 
-signal ctrl_load_conect, en_state_conect, flag_last_conect : std_logic;
+signal ctrl_load_connect, en_state_connect, flag_last_connect : std_logic;
 
 
 COMPONENT PC_Simon_Iter IS
@@ -88,9 +88,9 @@ PC: 	PC_Simon_Iter
 						  reset => reset_top,
 						  clock => clk_top,
 						  start => start_top,
-						  flag_last => flag_last_conect,
-						  ctrl_load => ctrl_load_conect,
-						  en_state => en_state_conect,
+						  flag_last => flag_last_connect,
+						  ctrl_load => ctrl_load_connect,
+						  en_state => en_state_connect,
 						  done => done_top,
 						  state_view => state_view
 						);
@@ -102,9 +102,9 @@ PO: 	PO_Simon_Iter
 							x_PO => x_top,
 							y_PO => y_top,
 							key_PO => key_top,
-							Ctrl_load => ctrl_load_conect,
-							En_state => en_state_conect,
-							Flag_last => flag_last_conect,
+							Ctrl_load => ctrl_load_connect,
+							En_state => en_state_connect,
+							Flag_last => flag_last_connect,
 							x_out_PO => x_out_top,
 							y_out_PO => y_out_top,
 
@@ -116,8 +116,8 @@ PO: 	PO_Simon_Iter
 							zBit_view => zBit_view
 						);
 
-ctrl_load_view <= ctrl_load_conect;
-en_state_view  <= en_state_conect;
-flag_last_view <= flag_last_conect;
+ctrl_load_view <= ctrl_load_connect;
+en_state_view  <= en_state_connect;
+flag_last_view <= flag_last_connect;
 
-end rtlBSN;
+end RTLGSPT;
